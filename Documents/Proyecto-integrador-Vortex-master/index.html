@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="es" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+    <meta name="generator" content="Astro v5.13.2" />
+    <title>Carousel Template · Bootstrap v5.3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="../assets/js/color-modes.js"></script>
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="theme-color" content="#712cf9" />
+    <link href="css/carousel.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+.bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+}
+    body{
+        background-color: #4b1fa6;
+        color: white;
+}
+    @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+}
+}
+    .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: #4b1fa6;
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow:
+        inset 0 0.5em 1.5em #0000001a,
+         inset 0 0.125em 0.5em #00000026;
+}
+    .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+}
+    .bi {
+    vertical-align: -0.125em;
+    fill: currentColor;
+}
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+.nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+}
+.btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+}
+.bd-mode-toggle {
+    z-index: 1500;
+}
+.bd-mode-toggle .bi {
+    width: 1em;
+    height: 1em;
+}
+    .bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+}
+
+    header.bg-dark,
+    .bg-black {
+    background-color: #4b1fa6 !important;
+}
+
+    .input-group .form-control {
+        background-color: #321175 !important;
+        border: 2px solid rgba(255, 255, 255, 0.5) !important;
+        color: #ffffff !important;
+        padding-left: 18px !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
+
+    .input-group .btn {
+        background-color: #321175 !important;
+        border: 2px solid rgba(255, 255, 255, 0.5) !important;
+        border-left: none !important;
+        color: #ffffff !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+.dropdown > .btn-dark {
+    background-color: #321175 !important;
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.input-group .btn:hover,
+.dropdown > .btn-dark:hover {
+    background-color: #3d168f !important;
+    border-color: #ffffff !important;
+}
+
+.input-group .form-control::placeholder {
+    color: #f1edfc !important;
+    opacity: 1;
+}
+
+    .bg-black .btn-dark {
+        background-color: #321175 !important;
+        border: 2px solid rgba(255, 255, 255, 0.5) !important;
+        color: #ffffff !important;
+    }
+
+    .bg-black .btn-dark:hover {
+        background-color: #3d168f !important;
+        border-color: #ffffff !important;
+    }
+
+    .game-card {
+    transition: 0.3s;
+    border: none;
+    background: #321175;
+    height: 100%;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #0c011e;
+}
+
+.img-game {
+    height: 320px;
+    object-fit: cover;
+}
+#menuCategorias{
+    background-color: #4B1FA6 !important;
+}
+
+.offcanvas-header {
+    position: relative;
+    justify-content: center;
+    min-height: 100px;
+}
+
+.logo-menu {
+    width: 280px;
+    height: 70px;
+    object-fit: contain;
+    transform: scale(2);
+}
+
+.offcanvas-header .btn-close {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.categorias {
+    width: 100%;
+    height: 150px;
+    background: #4B1FA6;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.categorias-contenedor {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 40px;
+}
+
+.categorias-slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    transition: transform 0.4s ease;
+}
+
+.categoria {
+    min-width: 105px;
+    height: 125px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.categoria:hover {
+    color: white;
+    transform: translateY(-4px);
+}
+
+.categoria i {
+    display: block;
+    font-size: 38px;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.categoria span {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.25;
+}
+
+.fifa-icon {
+    display: block;
+    font-size: 32px;
+    line-height: 1;
+    margin-bottom: 14px;
+}
+
+.categoria-flecha {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 55px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    opacity: 0.75;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.categoria-flecha:hover {
+    opacity: 1;
+}
+
+.izquierda {
+    left: 70px;
+}
+
+.derecha {
+    right: 70px;
+}
+
+.izquierda:hover {
+    transform: translateY(-50%) translateX(-5px);
+}
+
+.derecha:hover {
+    transform: translateY(-50%) translateX(5px);
+}
+
+
+.footer-dark {
+    background-color: #22076d;
+    color: #a4a0b3;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.footer-dark a {
+    color: #a4a0b3;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.footer-dark a:hover {
+    color: #ffffff;
+}
+
+.footer-dark h6 {
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+}
+
+
+.footer-dark .social-icons a {
+    color: #ffffff !important;
+    font-size: 1.3rem;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.footer-dark .social-icons a:hover {
+    color: #b197fc !important;
+}
+
+
+.trustpilot-stars {
+    font-size: 1.2rem;
+}
+.trustpilot-stars .fa-star,
+.trustpilot-stars .fa-star-half-alt {
+  color: #00b67a; 
+    background-color: #ffffff;
+    padding: 3px;
+    margin-right: 2px;
+}
+
+.trustpilot-link {
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.trustpilot-link:hover {
+    background-color: rgba(255, 255, 255, 0.04); 
+    transform: translateY(-3px);             
+    cursor: pointer;                           
+}
+
+
+.trustpilot-link:hover .footer-legal-text {
+  color: #a4a0b3; 
+}
+
+
+.payment-bar {
+  background-color: #ffffff;
+  padding: 15px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.newsletter-form input {
+  background-color: transparent;
+  border: 1px solid #4a4263;
+  color: #ffffff;
+}
+
+.newsletter-form input::placeholder {
+  color: #726d85;
+}
+
+.newsletter-form input:focus {
+  background-color: transparent;
+  color: #ffffff;
+  box-shadow: none;
+  border-color: #ffffff;
+}
+
+.newsletter-form button {
+  background-color: #ffffff;
+  color: #150e28;
+  font-weight: bold;
+  border: none;
+  padding: 10px 25px;
+}
+
+.newsletter-form button:hover {
+  background-color: #e0e0e0;
+}
+
+
+.lang-btn {
+  background-color: transparent;
+  border: 1px solid #4a4263;
+  color: #ffffff;
+  padding: 8px 15px;
+}
+
+.lang-btn:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+
+.footer-legal-text {
+  font-size: 0.8rem;
+  color: #726d85;
+}
+
+.footer-legal-text a {
+  color: #726d85;
+}
+
+.footer-legal-text a:hover {
+  color: #ffffff;
+}
+
+.accordion-banner-list {
+        display: flex;
+        width: 100%;
+        height: 450px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .accordion-banner-item {
+        position: relative;
+        flex: 1;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: flex 0.5s ease-in-out, filter 0.5s ease-in-out;
+        filter: brightness(75%);
+    }
+
+    .accordion-banner-item:hover {
+        flex: 3.5;
+        filter: brightness(100%);
+    }
+
+    .accordion-banner-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .accordion-caption {
+        position: absolute;
+        bottom: 40px;
+        left: 40px;
+        right: 40px;
+        color: #fff;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out 0.15s;
+        text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+    }
+
+    .accordion-caption h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .accordion-caption p {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .accordion-banner-item:hover .accordion-caption {
+        opacity: 1;
+    }
+
+    @media (max-width: 768px) {
+        .accordion-banner-list {
+            flex-direction: column;
+            height: auto;
+        }
+        .accordion-banner-item {
+            height: 220px;
+            filter: brightness(100%);
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+        .accordion-caption {
+            opacity: 1;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+        }
+        .accordion-caption h1 {
+            font-size: 1.5rem;
+        }
+        .accordion-caption p {
+            font-size: 0.95rem;
+        }
+    }
+
+    /* ESTILOS PARA SUGERENCIAS / TENDENCIAS FLOTANTES */
+    .buscador-contenedor {
+        position: relative;
+    }
+    .sugerencias-box {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #250b5e;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 0 0 10px 10px;
+        z-index: 1000;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        max-height: 250px;
+        overflow-y: auto;
+        display: none;
+    }
+    .sugerencia-item {
+        padding: 10px 15px;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        font-size: 0.95rem;
+    }
+    .sugerencia-item:last-child {
+        border-bottom: none;
+    }
+    .sugerencia-item:hover {
+        background: #3d168f;
+    }
+    .sugerencias-header {
+        font-size: 0.75rem;
+        color: #b197fc;
+        padding: 8px 15px 4px 15px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
+    </style>
+    </head>
+    <body>
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+            <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false"><img src="img/1.png" alt=""></button></li>
+            <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false"><img src="img/2.png" alt=""></button></li>
+            <li><button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true"><img src="img/3.png" alt=""></button></li>
+        </ul>
+    </div>
+
+    <header>
+    <div class="container-fluid px-2 d-flex align-items-center justify-content-between" style="height: 110px;">
+        <a href="index3.html" class="navbar-brand d-flex align-items-center p-0 m-0 flex-shrink-0" style="height: 85px;">
+        <img src="img/LOGO NAV.png" alt="Vortex Game Vault" class=" h-auto w-auto" style="object-fit: contain;" style="width: 240px; height: auto; object-fit: contain;">
+        </a>
+
+        <div class="flex-grow-1 mx-4 buscador-contenedor" style="max-width: 600px;">
+            <div class="input-group align-items-center">
+                <input type="text" id="buscadorInput" class="form-control bg-dark text-white border-secondary shadow-none py-3" placeholder="Busca juegos, recargas y más" autocomplete="off">
+                <button class="btn btn-outline-secondary text-light border-secondary px-3 py-3" type="button">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+            <div id="sugerenciasBox" class="sugerencias-box"></div>
+        </div>
+
+        <div class="d-flex align-items-center gap-4 flex-shrink-0">
+            <div class="dropdown">
+                <button class="btn btn-dark text-light border-secondary dropdown-toggle d-flex align-items-center gap-2 py-2 px-3 shadow-none" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span>🇨🇴 Español Latinoamericano | COP</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark bg-dark border-secondary">
+                    <li><a class="dropdown-item py-2" href="#">🇨🇴 Español Latinoamericano | COP</a></li>
+                    <li><a class="dropdown-item py-2" href="#">🇺🇸 English (US) | USD</a></li>
+                    <li><a class="dropdown-item py-2" href="#">🇪🇸 Español (España) | EUR</a></li>
+                    <li><a class="dropdown-item py-2" href="#">🇲🇽 Español (México) | MXN</a></li>
+                </ul>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <a href="#" class="text-light fs-4 text-decoration-none" title="Favoritos">❤️</a>
+                <a href="#" class="text-light fs-4 text-decoration-none" title="Carrito">🛒</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-black px-4 py-2 border-top border-secondary d-flex align-items-center gap-3 justify-content-center">
+        <button class="btn btn-dark text-light border-secondary d-flex align-items-center gap-2 py-1 px-3 fw-bold shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuCategorias" aria-controls="menuCategorias">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            Categorías
+        </button>
+
+        <ul class="nav align-items-center gap-2 mb-0">
+            <li class="nav-item"><a class="nav-link fw-bold text-light px-2" href="juegos90.html">Juegos -90%</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-light px-2" href="OfertasJuegos.html">FC 27</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-light px-2" href="ofertasConsolas.html">GTA 6</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-light px-2" href="ofertasPC.html">Efootball</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-light px-2" href="SeccionAventura.html">Resident Evil Requiem</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-light px-2" href="SeccionDeportes.html">Monitores</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-light px-2" href="SeccionEstrategia.html">Torres</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="menuCategorias" aria-labelledby="menuCategoriasLabel">
+    <div class="offcanvas-header border-bottom border-secondary">
+        <img src="img/LOGO NAV.png" alt="Vortex Game Vault" class="logo-menu">
+        <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <p class="small mb-3 fw-bold text-white m-0 text-center">SECCIONES PRINCIPALES</p>
+        <ul class="list-unstyled d-flex flex-column gap-2">
+            <li><a href="OfertasJuegos.html" class="text-decoration-none text-light d-block p-2 rounded bg-secondary bg-opacity-10">🎮 Juegos</a></li>
+            <li><a href="ofertasConsolas.html" class="text-decoration-none text-light d-block p-2 rounded bg-secondary bg-opacity-10">🕹️ Consolas</a></li>
+            <li><a href="ofertasPC.html" class="text-decoration-none text-light d-block p-2 rounded bg-secondary bg-opacity-10">💻 PC Gamer</a></li>
+            <li><a href="SeccionAventura.html" class="text-decoration-none text-light d-block p-2 rounded bg-secondary bg-opacity-10">🗺️ Aventura</a></li>
+            <li><a href="SeccionDeportes.html" class="text-decoration-none text-light d-block p-2 rounded bg-secondary bg-opacity-10">⚽ Deportes</a></li>
+            <li><a href="SeccionEstrategia.html" class="text-decoration-none text-light d-block p-2 rounded bg-secondary bg-opacity-10">♟️ Estrategia</a></li>
+        </ul>
+    </div>
+</div>
+
+<main>
+    <div class="accordion-banner-container mb-6">
+        <ul class="accordion-banner-list">
+            <li class="accordion-banner-item" style="background-image: url('img/BannerPC.png');">
+                <a href="ofertasPC.html" class="accordion-banner-link">
+                    <div class="accordion-caption text-start">
+                        <h1 class="fw-bold">Ofertas PC.</h1>
+                        <p class="fw-bold">Los mejores PC llegado a nuestra tienda.</p>
+                        <p><span class="btn btn-lg btn-primary fw-bold">Ver Catalogo</span></p>
+                    </div>
+                </a>
+            </li>
+            <li class="accordion-banner-item" style="background-image: url('img/Banner consolas.png');">
+                <a href="ofertasConsolas.html" class="accordion-banner-link">
+                    <div class="accordion-caption">
+                        <h1 class="fw-bold">Ofertas Consolas</h1>
+                        <p class="fw-bold">Los mejores consolas del 2026: PS5 y Xbox Series X disponibles ahora.</p>
+                        <p><span class="btn btn-lg btn-primary fw-bold">Saber mas.</span></p>
+                    </div>
+                </a>
+            </li>
+            <li class="accordion-banner-item" style="background-image: url('img/BANNER JUEGOS.png');">
+                <a href="OfertasJuegos.html" class="accordion-banner-link">
+                    <div class="accordion-caption text-end">
+                        <h1 class="fw-bold">Ofertas Juegos.</h1>
+                        <p class="fw-bold">Catalogo de 20 Juegos en descuento: disponibles Ahora</p>
+                        <p><span class="btn btn-lg btn-primary fw-bold">Ver Ofertas</span></p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <section class="categorias">
+        <button class="categoria-flecha izquierda" id="btnAnterior"><i class="bi bi-chevron-left"></i></button>
+        <div class="categorias-contenedor">
+            <div class="categorias-slider" id="categoriasSlider">
+                <a href="OfertasJuegos.html" class="categoria"><i class="bi bi-controller"></i><span>Juegos</span></a>
+                <a href="#" class="categoria"><i class="bi bi-controller"></i><span>eCards de<br>Juegos</span></a>
+                <a href="#" class="categoria"><i class="bi bi-gift"></i><span>eTarjetas</span></a>
+                <a href="#" class="categoria"><i class="bi bi-cash-stack"></i><span>Dinero<br>electrónico</span></a>
+                <a href="#" class="categoria"><i class="bi bi-steam"></i><span>Steam</span></a>
+                <a href="#" class="categoria"><i class="bi bi-credit-card"></i><span>Tarjetas Steam</span></a>
+                <a href="#" class="categoria"><i class="bi bi-playstation"></i><span>PSN</span></a>
+                <a href="#" class="categoria"><i class="bi bi-xbox"></i><span>Xbox</span></a>
+                <a href="#" class="categoria"><strong class="fifa-icon">FIFA</strong><span>FIFA</span></a>
+                <a href="#" class="categoria"><i class="bi bi-controller"></i><span>Fortnite</span></a>
+                <a href="#" class="categoria"><i class="bi bi-amazon"></i><span>Amazon</span></a>
+            </div>
+        </div>
+        <button class="categoria-flecha derecha" id="btnSiguiente"><i class="bi bi-chevron-right"></i></button>
+    </section>
+
+    <section class="container my-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4" id="contenedorTarjetas">
+            <div class="col columna-juego">
+                <div class="card h-100 game-card text-white">
+                    <span class="badge bg-danger position-absolute m-2">-50%</span>
+                    <img src="img/fc 25 PS5.jpg" class="card-img-top img-game" alt="FC 25">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">EA Sports FC 25</h5>
+                        <p class="text-decoration-line-through text-secondary m-0">$310.000</p>
+                        <p class="text-info fw-bold fs-4">$155.000</p>
+                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col columna-juego">
+                <div class="card h-100 game-card text-white">
+                    <span class="badge bg-danger position-absolute m-2">-40%</span>
+                    <img src="img/DBZSP PS5.jpg" class="card-img-top img-game" alt="DBZ">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">Dragon Ball: Sparking! Zero</h5>
+                        <p class="text-decoration-line-through text-secondary m-0">$150.000</p>
+                        <p class="text-info fw-bold fs-4">$90.000</p>
+                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col columna-juego">
+                <div class="card h-100 game-card text-white">
+                    <span class="badge bg-danger position-absolute m-2">-20%</span>
+                    <img src="img/God_of_War_Ragnarok PS5.webp" class="card-img-top img-game" alt="God of War Ragnarok">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">God of War Ragnarok</h5>
+                        <p class="text-decoration-line-through text-secondary m-0">$250.000</p>
+                        <p class="text-info fw-bold fs-4">$187.000</p>
+                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col columna-juego">
+                <div class="card h-100 game-card text-white">
+                    <span class="badge bg-danger position-absolute m-2">-15%</span>
+                    <img src="img/ELDEN PS5.jpg" class="card-img-top img-game" alt="Elden Ring">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">Elden Ring</h5>
+                        <p class="text-decoration-line-through text-secondary m-0">$220.000</p>
+                        <p class="text-info fw-bold fs-4">$187.000</p>
+                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col columna-juego">
+                <div class="card h-100 game-card text-white">
+                    <span class="badge bg-danger position-absolute m-2">-30%</span>
+                    <img src="img/Minecraft XBOX.webp" class="card-img-top img-game" alt="Minecraft">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">Minecraft</h5>
+                        <p class="text-decoration-line-through text-secondary m-0">$90.000</p>
+                        <p class="text-info fw-bold fs-4">$63.000</p>
+                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col columna-juego">
+                <div class="card h-100 game-card text-white">
+                    <span class="badge bg-danger position-absolute m-2">-50%</span>
+                    <img src="img/GTA V PS5.jpg" class="card-img-top img-game" alt="GTA V">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">GTA V</h5>
+                        <p class="text-decoration-line-through text-secondary m-0">$120.000</p>
+                        <p class="text-info fw-bold fs-4">$60.000</p>
+                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col columna-juego">
+                <div class="card h-100 game-card text-white">
+                    <span class="badge bg-danger position-absolute m-2">-25%</span>
+                    <img src="img/spiderman2 PS5.webp" class="card-img-top img-game" alt="Spider-Man 2">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">Spider-Man 2</h5>
+                        <p class="text-decoration-line-through text-secondary m-0">$280.000</p>
+                        <p class="text-info fw-bold fs-4">$210.000</p>
+                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col columna-juego">
+                <div class="card h-100 game-card text-white">
+                    <span class="badge bg-danger position-absolute m-2">-60%</span>
+                    <img src="img/resident evil 8 PS5.jpg" class="card-img-top img-game" alt="Resident Evil Village">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">Resident Evil Village</h5>
+                        <p class="text-decoration-line-through text-secondary m-0">$180.000</p>
+                        <p class="text-info fw-bold fs-4">$72.000</p>
+                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col columna-juego">
+                <div class="card h-100 game-card text-white">
+                    <span class="badge bg-danger position-absolute m-2">-30%</span>
+                    <img src="img/The last of us PS5.webp" class="card-img-top img-game" alt="The Last Of Us">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">The Last Of Us</h5>
+                        <p class="text-decoration-line-through text-secondary m-0">$190.000</p>
+                        <p class="text-info fw-bold fs-4">$91.000</p>
+                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col columna-juego">
+                <div class="card h-100 game-card text-white">
+                    <span class="badge bg-danger position-absolute m-2">-20%</span>
+                    <img src="img/resident evil 4 PS5.webp" class="card-img-top img-game" alt="Resident Evil 4">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">Resident Evil 4</h5>
+                        <p class="text-decoration-line-through text-secondary m-0">$190.000</p>
+                        <p class="text-info fw-bold fs-4">$152.000</p>
+                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- FOOTER COMPLETO RESTAURADO -->
+<footer class="footer-dark pt-5 pb-3">
+  <div class="container">
+    <div class="row gy-4 mb-5">
+      <div class="col-lg-3 col-md-6">
+        <h6 class="text-uppercase mb-4">Sobre Vortex Game Vault</h6>
+        <p class="small text-muted mb-4">Tu plataforma de confianza para adquirir juegos, tarjetas de regalo y recargas digitales al mejor precio del mercado.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="text-uppercase mb-4">Ayuda y Soporte</h6>
+        <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+          <li><a href="#">Centro de Ayuda</a></li>
+          <li><a href="#">¿Cómo comprar?</a></li>
+          <li><a href="#">Métodos de Pago</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="text-uppercase mb-4">Categorías Populares</h6>
+        <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+          <li><a href="OfertasJuegos.html">Juegos PC & Consola</a></li>
+          <li><a href="#">Tarjetas Steam / PSN / Xbox</a></li>
+          <li><a href="#">Recargas In-Game</a></li>
+          <li><a href="ofertasPC.html">Hardware & Periféricos</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="text-uppercase mb-4">Newsletter</h6>
+        <p class="small text-muted mb-3">Suscríbete para recibir ofertas exclusivas y novedades.</p>
+        <form class="newsletter-form d-flex gap-2 mb-4">
+          <input type="email" class="form-control" placeholder="Tu correo electrónico">
+          <button type="submit" class="btn">Unirse</button>
+        </form>
+        <button class="lang-btn d-flex align-items-center gap-2 rounded">
+          <i class="fas fa-globe"></i> <span>Español | COP</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Trustpilot & Legal / Payment Bar -->
+    <div class="border-top border-secondary pt-4 mt-4">
+      <div class="row align-items-center gy-3">
+        <div class="col-md-6 text-center text-md-start">
+          <a href="#" class="trustpilot-link d-inline-flex align-items-center gap-3 p-2 rounded text-decoration-none">
+            <div class="d-flex flex-column">
+              <span class="fw-bold text-white small">Trustpilot</span>
+              <div class="trustpilot-stars text-nowrap my-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+            <span class="footer-legal-text">Basado en <strong>4,500+</strong> reseñas</span>
+          </a>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="footer-legal-text mb-0">© 2026 Vortex Game Vault. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS DE BOOTSTRAP Y BÚSQUEDA -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const input = document.getElementById('buscadorInput');
+        const sugerenciasBox = document.getElementById('sugerenciasBox');
+        const columnasJuego = document.querySelectorAll('.columna-juego');
+
+        const listaJuegos = Array.from(columnasJuego).map(col => {
+            const titulo = col.querySelector('.card-title');
+            return titulo ? titulo.textContent.trim() : '';
+        }).filter(Boolean);
+
+        const tendencias = ['EA Sports FC 25', 'Elden Ring', 'GTA V', 'Spider-Man 2', 'Minecraft'];
+
+        function mostrarSugerencias(filtro = '') {
+            const query = filtro.toLowerCase().trim();
+            sugerenciasBox.innerHTML = '';
+
+            let coincidencias = [];
+
+            if (query.length === 0) {
+                sugerenciasBox.innerHTML = `<div class="sugerencias-header"><i class="fa-solid fa-fire me-1"></i> BÚSQUEDAS TENDENCIA</div>`;
+                coincidencias = tendencias;
+            } else {
+                coincidencias = listaJuegos.filter(juego => juego.toLowerCase().includes(query));
+                if (coincidencias.length > 0) {
+                    sugerenciasBox.innerHTML = `<div class="sugerencias-header">COINCIDENCIAS EN TIENDA</div>`;
+                }
+            }
+
+            if (coincidencias.length === 0) {
+                sugerenciasBox.innerHTML += `<div class="sugerencia-item text-secondary">No se encontró "${filtro}"</div>`;
+            } else {
+                coincidencias.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'sugerencia-item';
+                    div.innerHTML = `<i class="fa-solid fa-magnifying-glass text-secondary"></i> <span>${item}</span>`;
+                    div.addEventListener('click', () => {
+                        input.value = item;
+                        filtrarTarjetas(item);
+                        sugerenciasBox.style.display = 'none';
+                    });
+                    sugerenciasBox.appendChild(div);
+                });
+            }
+
+            sugerenciasBox.style.display = 'block';
+        }
+
+        function filtrarTarjetas(texto) {
+            const query = texto.toLowerCase().trim();
+            columnasJuego.forEach(col => {
+                const titulo = col.querySelector('.card-title');
+                if (titulo) {
+                    const textTitle = titulo.textContent.toLowerCase();
+                    if (textTitle.includes(query)) {
+                        col.classList.remove('d-none');
+                    } else {
+                        col.classList.add('d-none');
+                    }
+                }
+            });
+        }
+
+        input.addEventListener('focus', () => {
+            mostrarSugerencias(input.value);
+        });
+
+        input.addEventListener('input', (e) => {
+            const val = e.target.value;
+            mostrarSugerencias(val);
+            filtrarTarjetas(val);
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!document.querySelector('.buscador-contenedor').contains(e.target)) {
+                sugerenciasBox.style.display = 'none';
+            }
+        });
+    });
+</script>
+</body>
+</html>
