@@ -4,10 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="" />
-    <meta
-      name="author"
-      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
-    />
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
     <meta name="generator" content="Astro v5.13.2" />
     <title>Carousel Template · Bootstrap v5.3</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -16,7 +13,6 @@
     <meta name="theme-color" content="#712cf9" />
     <link href="css/carousel.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
 .bd-placeholder-img {
@@ -167,11 +163,10 @@
     object-fit: cover;
 }
 #menuCategorias{
-    background-color:
-    #4B1FA6 !important;
+    background-color: #4B1FA6 !important;
 }
 
-        .offcanvas-header {
+.offcanvas-header {
     position: relative;
     justify-content: center;
     min-height: 100px;
@@ -394,8 +389,8 @@
 
 .trustpilot-link:hover {
     background-color: rgba(255, 255, 255, 0.04); 
-    transform: translateY(-3px);               
-    cursor: pointer;                          
+    transform: translateY(-3px);             
+    cursor: pointer;                           
 }
 
 
@@ -547,86 +542,64 @@
             font-size: 0.95rem;
         }
     }
-    
+
+    /* ESTILOS PARA SUGERENCIAS / TENDENCIAS FLOTANTES */
+    .buscador-contenedor {
+        position: relative;
+    }
+    .sugerencias-box {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #250b5e;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 0 0 10px 10px;
+        z-index: 1000;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        max-height: 250px;
+        overflow-y: auto;
+        display: none;
+    }
+    .sugerencia-item {
+        padding: 10px 15px;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        font-size: 0.95rem;
+    }
+    .sugerencia-item:last-child {
+        border-bottom: none;
+    }
+    .sugerencia-item:hover {
+        background: #3d168f;
+    }
+    .sugerencias-header {
+        font-size: 0.75rem;
+        color: #b197fc;
+        padding: 8px 15px 4px 15px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
     </style>
-        </head>
+    </head>
     <body>
-        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-        <symbol id="check2" viewBox="0 0 16 16">
-        <path
-            d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
-        ></path>
-        </symbol>
-        <symbol id="circle-half" viewBox="0 0 16 16">
-        <path
-            d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
-        ></path>
-        </symbol>
-        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-        <path
-            d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
-        ></path>
-        <path
-            d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
-        ></path>
-    </symbol>
-    <symbol id="sun-fill" viewBox="0 0 16 16">
-        <path
-            d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
-        ></path>
-    </symbol>
-    </svg>
-    <div
-        class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
-    >
-    <button
-        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-        id="bd-theme"
-        type="button"
-        aria-expanded="false"
-        data-bs-toggle="dropdown"
-        aria-label="Toggle theme (auto)"
-    >
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-    </button>
-    <ul
-        class="dropdown-menu dropdown-menu-end shadow"
-        aria-labelledby="bd-theme-text"
-    >
-        <li>
-            <button
-            type="button"
-            class="dropdown-item d-flex align-items-center"
-            data-bs-theme-value="light"
-            aria-pressed="false"
-        >
-            <img src="img/1.png" alt="">
+    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+        <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+            <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
         </button>
-        </li>
-        <li>
-        <button
-            type="button"
-            class="dropdown-item d-flex align-items-center"
-            data-bs-theme-value="dark"
-            aria-pressed="false"
-        >
-        <img src="img/2.png" alt="">
-    </button>
-        </li>
-        <li>
-        <button
-            type="button"
-            class="dropdown-item d-flex align-items-center active"
-            data-bs-theme-value="auto"
-            aria-pressed="true"
-        >
-            <img src="img/3.png" alt="">
-        </button>
-        </li>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+            <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false"><img src="img/1.png" alt=""></button></li>
+            <li><button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false"><img src="img/2.png" alt=""></button></li>
+            <li><button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true"><img src="img/3.png" alt=""></button></li>
         </ul>
     </div>
 
     <header>
+<<<<<<< HEAD
     <div class= "container-fluid px-2 d-flex align-items-center justify-content-between" style="height: 110px;">
         <a href="index.html" class="navbar-brand d-flex align-items-center p-0 m-0 flex-shrink-0" style="height: 85px;">
             <img src="img/LOGO NAV.png" alt="Vortex Game Vault" class=" h-auto w-auto" style="object-fit: contain;" style="width: 240px; height: auto; object-fit: contain;">
@@ -655,6 +628,21 @@
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
             </button>
+=======
+    <div class="container-fluid px-2 d-flex align-items-center justify-content-between" style="height: 110px;">
+        <a href="index3.html" class="navbar-brand d-flex align-items-center p-0 m-0 flex-shrink-0" style="height: 85px;">
+        <img src="img/LOGO NAV.png" alt="Vortex Game Vault" class=" h-auto w-auto" style="object-fit: contain;" style="width: 240px; height: auto; object-fit: contain;">
+        </a>
+
+        <div class="flex-grow-1 mx-4 buscador-contenedor" style="max-width: 600px;">
+            <div class="input-group align-items-center">
+                <input type="text" id="buscadorInput" class="form-control bg-dark text-white border-secondary shadow-none py-3" placeholder="Busca juegos, recargas y más" autocomplete="off">
+                <button class="btn btn-outline-secondary text-light border-secondary px-3 py-3" type="button">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+            </div>
+            <div id="sugerenciasBox" class="sugerencias-box"></div>
+>>>>>>> 0e4f3fa1bc1152f5b987aa684c155a15b72fb012
         </div>
 
         <div id="sugerenciasBox" class="sugerencias-box"></div>
@@ -690,27 +678,13 @@
         </button>
 
         <ul class="nav align-items-center gap-2 mb-0">
-            <li class="nav-item">
-                <a class="nav-link fw-bold text-light px-2" href="juegos90.html">Juegos -90%</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold text-light px-2" href="OfertasJuegos.html">FC 27</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold text-light px-2" href="ofertasConsolas.html">GTA 6</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold text-light px-2" href="ofertasPC.html">Efootball</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold text-light px-2" href="SeccionAventura.html">Resident Evil Requiem</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold text-light px-2" href="SeccionDeportes.html">Monitores</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link fw-bold text-light px-2" href="SeccionEstrategia.html">Torres</a>
-            </li>
+            <li class="nav-item"><a class="nav-link fw-bold text-light px-2" href="juegos90.html">Juegos -90%</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-light px-2" href="OfertasJuegos.html">FC 27</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-light px-2" href="ofertasConsolas.html">GTA 6</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-light px-2" href="ofertasPC.html">Efootball</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-light px-2" href="SeccionAventura.html">Resident Evil Requiem</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-light px-2" href="SeccionDeportes.html">Monitores</a></li>
+            <li class="nav-item"><a class="nav-link fw-bold text-light px-2" href="SeccionEstrategia.html">Torres</a></li>
         </ul>
     </div>
 </header>
@@ -721,7 +695,7 @@
         <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <p class=" small mb-3 fw-bold text-white m-0 text-center">SECCIONES PRINCIPALES</p>
+        <p class="small mb-3 fw-bold text-white m-0 text-center">SECCIONES PRINCIPALES</p>
         <ul class="list-unstyled d-flex flex-column gap-2">
             <li><a href="OfertasJuegos.html" class="text-decoration-none text-light d-block p-2 rounded bg-secondary bg-opacity-10">🎮 Juegos</a></li>
             <li><a href="ofertasConsolas.html" class="text-decoration-none text-light d-block p-2 rounded bg-secondary bg-opacity-10">🕹️ Consolas</a></li>
@@ -733,124 +707,62 @@
     </div>
 </div>
 
-
-    
-    <main>
+<main>
     <div class="accordion-banner-container mb-6">
-    <ul class="accordion-banner-list">
-        
-        <li class="accordion-banner-item" style="background-image: url('img/BannerPC.png');">
-            <a href="ofertasPC.html" class="accordion-banner-link">
-                <div class="accordion-caption text-start">
-                    <h1 class="fw-bold">Ofertas PC.</h1>
-                    <p class="fw-bold">Los mejores PC llegado a nuestra tienda.</p>
-                    <p><span class="btn btn-lg btn-primary fw-bold">Ver Catalogo</span></p>
-                </div>
-            </a>
-        </li>
-
-        <li class="accordion-banner-item" style="background-image: url('img/Banner consolas.png');">
-            <a href="ofertasConsolas.html" class="accordion-banner-link">
-                <div class="accordion-caption">
-                    <h1 class="fw-bold">Ofertas Consolas</h1>
-                    <p class="fw-bold">Los mejores consolas del 2026: PS5 y Xbox Series X disponibles ahora.</p>
-                    <p><span class="btn btn-lg btn-primary fw-bold">Saber mas.</span></p>
-                </div>
-            </a>
-        </li>
-
-        <li class="accordion-banner-item" style="background-image: url('img/BANNER JUEGOS.png');">
-            <a href="OfertasJuegos.html" class="accordion-banner-link">
-                <div class="accordion-caption text-end">
-                    <h1 class="fw-bold">Ofertas Juegos.</h1>
-                    <p class="fw-bold">Catalogo de 20 Juegos en descuento: disponibles Ahora</p>
-                    <p><span class="btn btn-lg btn-primary fw-bold">Ver Ofertas</span></p>
-                </div>
-            </a>
-        </li>
-
-    </ul>
-</div>
-
-    <section class="categorias">
-
-    <button class="categoria-flecha izquierda" id="btnAnterior">
-        <i class="bi bi-chevron-left"></i>
-    </button>
-
-    <div class="categorias-contenedor">
-
-        <div class="categorias-slider" id="categoriasSlider">
-
-            <a href="OfertasJuegos.html" class="categoria">
-                <i class="bi bi-controller"></i>
-                <span>Juegos</span>
-            </a>
-
-            <a href="#" class="categoria">
-                <i class="bi bi-controller"></i>
-                <span>eCards de<br>Juegos</span>
-            </a>
-
-            <a href="#" class="categoria">
-                <i class="bi bi-gift"></i>
-                <span>eTarjetas</span>
-            </a>
-
-            <a href="#" class="categoria">
-                <i class="bi bi-cash-stack"></i>
-                <span>Dinero<br>electrónico</span>
-            </a>
-
-            <a href="#" class="categoria">
-                <i class="bi bi-steam"></i>
-                <span>Steam</span>
-            </a>
-
-            <a href="#" class="categoria">
-                <i class="bi bi-credit-card"></i>
-                <span>Tarjetas Steam</span>
-            </a>
-
-            <a href="#" class="categoria">
-                <i class="bi bi-playstation"></i>
-                <span>PSN</span>
-            </a>
-
-            <a href="#" class="categoria">
-                <i class="bi bi-xbox"></i>
-                <span>Xbox</span>
-            </a>
-
-            <a href="#" class="categoria">
-                <strong class="fifa-icon">FIFA</strong>
-                <span>FIFA</span>
-            </a>
-
-            <a href="#" class="categoria">
-                <i class="bi bi-controller"></i>
-                <span>Fortnite</span>
-            </a>
-
-            <a href="#" class="categoria">
-                <i class="bi bi-amazon"></i>
-                <span>Amazon</span>
-            </a>
-
-        </div>
-
+        <ul class="accordion-banner-list">
+            <li class="accordion-banner-item" style="background-image: url('img/BannerPC.png');">
+                <a href="ofertasPC.html" class="accordion-banner-link">
+                    <div class="accordion-caption text-start">
+                        <h1 class="fw-bold">Ofertas PC.</h1>
+                        <p class="fw-bold">Los mejores PC llegado a nuestra tienda.</p>
+                        <p><span class="btn btn-lg btn-primary fw-bold">Ver Catalogo</span></p>
+                    </div>
+                </a>
+            </li>
+            <li class="accordion-banner-item" style="background-image: url('img/Banner consolas.png');">
+                <a href="ofertasConsolas.html" class="accordion-banner-link">
+                    <div class="accordion-caption">
+                        <h1 class="fw-bold">Ofertas Consolas</h1>
+                        <p class="fw-bold">Los mejores consolas del 2026: PS5 y Xbox Series X disponibles ahora.</p>
+                        <p><span class="btn btn-lg btn-primary fw-bold">Saber mas.</span></p>
+                    </div>
+                </a>
+            </li>
+            <li class="accordion-banner-item" style="background-image: url('img/BANNER JUEGOS.png');">
+                <a href="OfertasJuegos.html" class="accordion-banner-link">
+                    <div class="accordion-caption text-end">
+                        <h1 class="fw-bold">Ofertas Juegos.</h1>
+                        <p class="fw-bold">Catalogo de 20 Juegos en descuento: disponibles Ahora</p>
+                        <p><span class="btn btn-lg btn-primary fw-bold">Ver Ofertas</span></p>
+                    </div>
+                </a>
+            </li>
+        </ul>
     </div>
 
-    <button class="categoria-flecha derecha" id="btnSiguiente">
-        <i class="bi bi-chevron-right"></i>
-    </button>
+    <section class="categorias">
+        <button class="categoria-flecha izquierda" id="btnAnterior"><i class="bi bi-chevron-left"></i></button>
+        <div class="categorias-contenedor">
+            <div class="categorias-slider" id="categoriasSlider">
+                <a href="OfertasJuegos.html" class="categoria"><i class="bi bi-controller"></i><span>Juegos</span></a>
+                <a href="#" class="categoria"><i class="bi bi-controller"></i><span>eCards de<br>Juegos</span></a>
+                <a href="#" class="categoria"><i class="bi bi-gift"></i><span>eTarjetas</span></a>
+                <a href="#" class="categoria"><i class="bi bi-cash-stack"></i><span>Dinero<br>electrónico</span></a>
+                <a href="#" class="categoria"><i class="bi bi-steam"></i><span>Steam</span></a>
+                <a href="#" class="categoria"><i class="bi bi-credit-card"></i><span>Tarjetas Steam</span></a>
+                <a href="#" class="categoria"><i class="bi bi-playstation"></i><span>PSN</span></a>
+                <a href="#" class="categoria"><i class="bi bi-xbox"></i><span>Xbox</span></a>
+                <a href="#" class="categoria"><strong class="fifa-icon">FIFA</strong><span>FIFA</span></a>
+                <a href="#" class="categoria"><i class="bi bi-controller"></i><span>Fortnite</span></a>
+                <a href="#" class="categoria"><i class="bi bi-amazon"></i><span>Amazon</span></a>
+            </div>
+        </div>
+        <button class="categoria-flecha derecha" id="btnSiguiente"><i class="bi bi-chevron-right"></i></button>
+    </section>
 
-</section>
-
-        <section class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
-
-        <div class="col">
+    <section class="container my-5">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4" id="contenedorTarjetas">
+            <div class="col columna-juego">
                 <div class="card h-100 game-card text-white">
                     <span class="badge bg-danger position-absolute m-2">-50%</span>
                     <img src="img/fc 25 PS5.jpg" class="card-img-top img-game" alt="FC 25">
@@ -863,35 +775,33 @@
                 </div>
             </div>
 
-            <div class="col">
-                    <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-40%</span>
-                        <img src="img/DBZSP PS5.jpg" class="card-img-top img-game" alt="DBZ">
-                        <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Dragon Ball: Sparking! Zero</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$150.000</p>
-                            <p class="text-info fw-bold fs-4">$90.000</p>
-                            <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
-                        </div>
+            <div class="col columna-juego">
+                <div class="card h-100 game-card text-white">
+                    <span class="badge bg-danger position-absolute m-2">-40%</span>
+                    <img src="img/DBZSP PS5.jpg" class="card-img-top img-game" alt="DBZ">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">Dragon Ball: Sparking! Zero</h5>
+                        <p class="text-decoration-line-through text-secondary m-0">$150.000</p>
+                        <p class="text-info fw-bold fs-4">$90.000</p>
+                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
                     </div>
                 </div>
+            </div>
 
-        <div class="col"> 
-                    <div class="card h-100 game-card text-white"> 
-                <span class="badge bg-danger position-absolute m-2">-20%</span> 
-                <img src="img/God_of_War_Ragnarok PS5.webp" 
-                    class="card-img-top img-game" 
-                    alt="God of War Ragnarok"> 
-                <div class="card-body text-center d-flex flex-column"> 
-                    <h5 class="card-title">God of War Ragnarok</h5> 
-                        <p class="text-decoration-line-through text-secondary m-0">$250.000</p> 
-                    <p class="text-info fw-bold fs-4">$187.000</p> 
-                    <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button> 
-                </div> 
-            </div> 
-        </div>
+            <div class="col columna-juego">
+                <div class="card h-100 game-card text-white">
+                    <span class="badge bg-danger position-absolute m-2">-20%</span>
+                    <img src="img/God_of_War_Ragnarok PS5.webp" class="card-img-top img-game" alt="God of War Ragnarok">
+                    <div class="card-body text-center d-flex flex-column">
+                        <h5 class="card-title">God of War Ragnarok</h5>
+                        <p class="text-decoration-line-through text-secondary m-0">$250.000</p>
+                        <p class="text-info fw-bold fs-4">$187.000</p>
+                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
+                    </div>
+                </div>
+            </div>
 
-                <div class="col">
+            <div class="col columna-juego">
                 <div class="card h-100 game-card text-white">
                     <span class="badge bg-danger position-absolute m-2">-15%</span>
                     <img src="img/ELDEN PS5.jpg" class="card-img-top img-game" alt="Elden Ring">
@@ -904,7 +814,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col columna-juego">
                 <div class="card h-100 game-card text-white">
                     <span class="badge bg-danger position-absolute m-2">-30%</span>
                     <img src="img/Minecraft XBOX.webp" class="card-img-top img-game" alt="Minecraft">
@@ -917,7 +827,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col columna-juego">
                 <div class="card h-100 game-card text-white">
                     <span class="badge bg-danger position-absolute m-2">-50%</span>
                     <img src="img/GTA V PS5.jpg" class="card-img-top img-game" alt="GTA V">
@@ -930,7 +840,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col columna-juego">
                 <div class="card h-100 game-card text-white">
                     <span class="badge bg-danger position-absolute m-2">-25%</span>
                     <img src="img/spiderman2 PS5.webp" class="card-img-top img-game" alt="Spider-Man 2">
@@ -938,12 +848,12 @@
                         <h5 class="card-title">Spider-Man 2</h5>
                         <p class="text-decoration-line-through text-secondary m-0">$280.000</p>
                         <p class="text-info fw-bold fs-4">$210.000</p>
-                        <button class="btn btn-primary mt-auto fw-bold ">Comprar Ahora</button>
+                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
                     </div>
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col columna-juego">
                 <div class="card h-100 game-card text-white">
                     <span class="badge bg-danger position-absolute m-2">-60%</span>
                     <img src="img/resident evil 8 PS5.jpg" class="card-img-top img-game" alt="Resident Evil Village">
@@ -956,7 +866,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col columna-juego">
                 <div class="card h-100 game-card text-white">
                     <span class="badge bg-danger position-absolute m-2">-30%</span>
                     <img src="img/The last of us PS5.webp" class="card-img-top img-game" alt="The Last Of Us">
@@ -969,293 +879,91 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col columna-juego">
                 <div class="card h-100 game-card text-white">
                     <span class="badge bg-danger position-absolute m-2">-20%</span>
                     <img src="img/resident evil 4 PS5.webp" class="card-img-top img-game" alt="Resident Evil 4">
                     <div class="card-body text-center d-flex flex-column">
                         <h5 class="card-title">Resident Evil 4</h5>
-                        <p class="text-decoration-line-through text-secondary m-0">190.000</p>
+                        <p class="text-decoration-line-through text-secondary m-0">$190.000</p>
                         <p class="text-info fw-bold fs-4">$152.000</p>
                         <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
                     </div>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="card h-100 game-card text-white">
-                    <span class="badge bg-danger position-absolute m-2">-15%</span>
-                    <img src="img/Call of duty bo6 PS5.webp" class="card-img-top img-game" alt="Call of Duty: Black Ops 6">
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title">Call of Duty: Black Ops 6</h5>
-                        <p class="text-decoration-line-through text-secondary m-0">$290.000</p>
-                        <p class="text-info fw-bold fs-4">$246.000</p>
-                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
-                    </div>
-                </div>
-            </div>
-
-        <div class="col">
-                <div class="card h-100 game-card text-white">
-                    <span class="badge bg-danger position-absolute m-2">-10%</span>
-                    <img src="img/Halo PS5.jpg" class="card-img-top img-game" alt="Halo Infinite">
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title">Halo Infinite</h5>
-                        <p class="text-decoration-line-through text-secondary m-0">$280.000</p>
-                        <p class="text-info fw-bold fs-4">$252.000</p>
-                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 game-card text-white">
-                    <span class="badge bg-danger position-absolute m-2">-45%</span>
-                    <img src="img/red2 PS5.webp" class="card-img-top img-game" alt="Red Dead Redemption 2">
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title">Red Dead Redemption 2</h5>
-                        <p class="text-decoration-line-through text-secondary m-0">$150.000</p>
-                        <p class="text-info fw-bold fs-4">$82.500</p>
-                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 game-card text-white">
-                    <span class="badge bg-danger position-absolute m-2">-10%</span>
-                    <img src="img/gears 4 XBOX.jpg" class="card-img-top img-game" alt="Gears of War 4">
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title">Gears of War 4</h5>
-                        <p class="text-decoration-line-through text-secondary m-0">$220.000</p>
-                        <p class="text-info fw-bold fs-4">$198.000</p>
-                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 game-card text-white">
-                    <span class="badge bg-danger position-absolute m-2">-5%</span>
-                    <img src="img/doom XBOX.jpg" class="card-img-top img-game" alt="The Legend of Zelda: Tears of the Kingdom">
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title">Doom</h5>
-                        <p class="text-decoration-line-through text-secondary m-0">$260.000</p>
-                        <p class="text-info fw-bold fs-4">$247.000</p>
-                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 game-card text-white">
-                    <span class="badge bg-danger position-absolute m-2">-30%</span>
-                    <img src="img/cyberpunk PS5.webp" class="card-img-top img-game" alt="Cyberpunk 2077">
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title">Cyberpunk 2077</h5>
-                        <p class="text-decoration-line-through text-secondary m-0">$160.000</p>
-                        <p class="text-info fw-bold fs-4">$112.000</p>
-                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 game-card text-white">
-                    <span class="badge bg-danger position-absolute m-2">-15%</span>
-                    <img src="img/MK 1 PS5.jpg" class="card-img-top img-game" alt="Mortal Kombat 1">
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title">Mortal Kombat 1</h5>
-                        <p class="text-decoration-line-through text-secondary m-0">$240.000</p>
-                        <p class="text-info fw-bold fs-4">$204.000</p>
-                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 game-card text-white">
-                    <span class="badge bg-danger position-absolute m-2">-25%</span>
-                    <img src="img/FORZA PS5.jpg" class="card-img-top img-game" alt="Forza Horizon 5">
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title">Forza Horizon 5</h5>
-                        <p class="text-decoration-line-through text-secondary m-0">$200.000</p>
-                        <p class="text-info fw-bold fs-4">$150.000</p>
-                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 game-card text-white">
-                    <span class="badge bg-danger position-absolute m-2">-20%</span>
-                    <img src="img/STREET PS5.jpg" class="card-img-top img-game" alt="Street Fighter 6">
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title">Street Fighter  6</h5>
-                        <p class="text-decoration-line-through text-secondary m-0">$210.000</p>
-                        <p class="text-info fw-bold fs-4">$168.000</p>
-                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 game-card text-white">
-                    <span class="badge bg-danger position-absolute m-2">-0%</span>
-                    <img src="img/fornite.jpg" class="card-img-top img-game" alt="Fortnite">
-                    <div class="card-body text-center d-flex flex-column">
-                        <h5 class="card-title">Fortnite</h5>
-                        <p class="text-decoration-line-through text-secondary m-0">$0</p>
-                        <p class="text-info fw-bold fs-4">$0</p>
-                        <button class="btn btn-primary mt-auto fw-bold">Comprar Ahora</button>
-                    </div>
-                </div>
-            </div>
-
-    </div>
+        </div>
     </section>
+</main>
 
-
-        <div class="payment-bar d-flex justify-content-center flex-wrap">
-            <span class="text-dark fw-bold me-4">💳 Visa / Mastercard</span>
-            <span class="text-dark fw-bold me-4">🅿️ PayPal</span>
-            <span class="text-dark fw-bold">🍏 Apple Pay / G Pay</span>
-        </div>
-
-        <footer class="footer-dark pt-5 pb-4">
-        <div class="container">
-    <div class="row mb-4">
-        
-
-        <div class="col-6 col-md-3 mb-4">
-        <h6>Sobre Vortex</h6>
-        <ul class="list-unstyled">
-        <li class="mb-2"><a href="#">Sobre Nosotros</a></li>
-        <li class="mb-2"><a href="#">Contactanos</a></li>
-        <li class="mb-2"><a href="#">Vacantes</a></li>
-        <li class="mb-2"><a href="#">Confianza y transparencia</a></li>
-        </ul>
-    </div>
-
-    <div class="col-6 col-md-3 mb-4">
-        <h6>Comprar</h6>
-        <ul class="list-unstyled">
-        <li class="mb-2"><a href="#">Como Comprar</a></li>
-        <li class="mb-2"><a href="#">Colecciones</a></li>
-        <li class="mb-2"><a href="#">Descuentos</a></li>
-        </ul>
-    </div>
-
-
-    <div class="col-6 col-md-3 mb-4">
-        <h6>Ayuda</h6>
-        <ul class="list-unstyled">
-        <li class="mb-2"><a href="#">Preguntas Frecuentes (Juegos, Consolas y PC)</a></li>
-        <li class="mb-2"><a href="#">Como activar tus Juegos</a></li>
-        <li class="mb-2"><a href="#">Crear un ticket</a></li>
-        <li class="mb-2"><a href="#">Politica de devoluciones</a></li>
-        </ul>
-    </div>
-
-
-    <div class="col-6 col-md-3 mb-4">
-        <h6>Comunidad</h6>
-        <ul class="list-unstyled">
-        <li class="mb-2"><a href="#">Noticias de gaming</a></li>
-        <li class="mb-2"><a href="#">Sorteos</a></li>
-        <li class="mb-2"><a href="#">Afiliados</a></li>
-        </ul>
-    </div>
-
-    </div>
-
-
-    <div class="row mb-5">
-
-        <div class="col-6 col-md-3 mb-4">
-            <h6>Negocios</h6>
-        <ul class="list-unstyled">
-            <li class="mb-2"><a href="#">Vende con Nosotros</a></li>
-            <li class="mb-2"><a href="#">Anunciate</a></li>
-        </ul>
-    </div>
-
-
-    <div class="col-6 col-md-3 mb-4">
-        <h6>Síguenos</h6>
+<!-- FOOTER COMPLETO RESTAURADO -->
+<footer class="footer-dark pt-5 pb-3">
+  <div class="container">
+    <div class="row gy-4 mb-5">
+      <div class="col-lg-3 col-md-6">
+        <h6 class="text-uppercase mb-4">Sobre Vortex Game Vault</h6>
+        <p class="small text-muted mb-4">Tu plataforma de confianza para adquirir juegos, tarjetas de regalo y recargas digitales al mejor precio del mercado.</p>
         <div class="social-icons">
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
-        <a href="#" aria-label="Reddit"><i class="fab fa-reddit-alien"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
         </div>
-    </div>
-
-
-    <div class="col-6 col-md-3 mb-4">
-        <h6>Descargar la app de Vortex</h6>
-        <div class="d-flex flex-column gap-2" style="max-width: 140px;">
-            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" class="img-fluid"></a>
-            <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" class="img-fluid"></a>
-        </div>
-    </div>
-
-
-        <div class="col-6 col-md-3 mb-4">
-    <h6>Ve qué dijeron de nosotros</h6>
-    <a href="https://www.trustpilot.com" target="_blank" class="trustpilot-link d-block text-decoration-none p-2 rounded">
-        <div class="d-flex align-items-center mb-1">
-            <span class="text-success fs-5 fw-bold me-2"><i class="fas fa-star"></i> Trustpilot</span>
-        </div>
-
-        <div class="trustpilot-stars mb-1">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-        </div>
-        <div class="footer-legal-text">TrustScore <b>4.4</b></div>
-    </a>
-</div>
-
-    </div>
-
-
-    <div class="row align-items-end pb-4 border-bottom border-secondary mb-4">
-    <div class="col-lg-6 mb-4 mb-lg-0">
-        <h6>Obtén ofertas personalizadas de juegos, consolas y PC</h6>
-        <form class="newsletter-form d-flex w-100 mb-2">
-        <input type="email" class="form-control rounded-0" placeholder="Ingresa tu email" required>
-        <button class="btn rounded-0" type="submit">Suscribirse</button>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="text-uppercase mb-4">Ayuda y Soporte</h6>
+        <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+          <li><a href="#">Centro de Ayuda</a></li>
+          <li><a href="#">¿Cómo comprar?</a></li>
+          <li><a href="#">Métodos de Pago</a></li>
+          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="text-uppercase mb-4">Categorías Populares</h6>
+        <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+          <li><a href="OfertasJuegos.html">Juegos PC & Consola</a></li>
+          <li><a href="#">Tarjetas Steam / PSN / Xbox</a></li>
+          <li><a href="#">Recargas In-Game</a></li>
+          <li><a href="ofertasPC.html">Hardware & Periféricos</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6 class="text-uppercase mb-4">Newsletter</h6>
+        <p class="small text-muted mb-3">Suscríbete para recibir ofertas exclusivas y novedades.</p>
+        <form class="newsletter-form d-flex gap-2 mb-4">
+          <input type="email" class="form-control" placeholder="Tu correo electrónico">
+          <button type="submit" class="btn">Unirse</button>
         </form>
-        <div class="footer-legal-text">
-            Puedes darte de baja en cualquier momento. Visita el apartado <a href="#" class="text-white text-decoration-underline">Aviso de Privacidad</a> para más información.
-        </div>
-    </div>
-    <div class="col-lg-6 d-flex justify-content-lg-end">
-        <button class="btn lang-btn rounded-0 d-flex align-items-center">
-            <span class="me-2">🇨🇴</span> Español Latinoamericano | COP
+        <button class="lang-btn d-flex align-items-center gap-2 rounded">
+          <i class="fas fa-globe"></i> <span>Español | COP</span>
         </button>
-        </div>
+      </div>
     </div>
 
-
-    <div class="row footer-legal-text">
-        <div class="col-md-9 mb-3 mb-md-0">
-            <p class="mb-1">&copy; 2017-2026 Vortex Game Vault, Inc. Todos los derechos reservados.</p>
-            <p class="mb-0">
-                <a href="#">Términos y Condiciones</a>, 
-                <a href="#">Aviso de Privacidad</a>, 
-                <a href="#">Preferencias de las cookies</a>.
-            </p>
+    <!-- Trustpilot & Legal / Payment Bar -->
+    <div class="border-top border-secondary pt-4 mt-4">
+      <div class="row align-items-center gy-3">
+        <div class="col-md-6 text-center text-md-start">
+          <a href="#" class="trustpilot-link d-inline-flex align-items-center gap-3 p-2 rounded text-decoration-none">
+            <div class="d-flex flex-column">
+              <span class="fw-bold text-white small">Trustpilot</span>
+              <div class="trustpilot-stars text-nowrap my-1">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+            <span class="footer-legal-text">Basado en <strong>4,500+</strong> reseñas</span>
+          </a>
         </div>
-        <div class="col-md-3 text-md-end">
-        <a href="#" class="text-white fw-bold"><i class="fas fa-arrow-up me-1"></i> Volver arriba</a>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="footer-legal-text mb-0">© 2026 Vortex Game Vault. Todos los derechos reservados.</p>
         </div>
+      </div>
     </div>
+  </div>
+</footer>
 
+<<<<<<< HEAD
     </div>
         </footer>
             </main>
@@ -1265,6 +973,89 @@
                 <script src="js/carruselCategorias.js"></script>
                 <script src="js/buscador.js"></script>
                 
+=======
+<!-- SCRIPTS DE BOOTSTRAP Y BÚSQUEDA -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const input = document.getElementById('buscadorInput');
+        const sugerenciasBox = document.getElementById('sugerenciasBox');
+        const columnasJuego = document.querySelectorAll('.columna-juego');
+>>>>>>> 0e4f3fa1bc1152f5b987aa684c155a15b72fb012
 
+        const listaJuegos = Array.from(columnasJuego).map(col => {
+            const titulo = col.querySelector('.card-title');
+            return titulo ? titulo.textContent.trim() : '';
+        }).filter(Boolean);
+
+        const tendencias = ['EA Sports FC 25', 'Elden Ring', 'GTA V', 'Spider-Man 2', 'Minecraft'];
+
+        function mostrarSugerencias(filtro = '') {
+            const query = filtro.toLowerCase().trim();
+            sugerenciasBox.innerHTML = '';
+
+            let coincidencias = [];
+
+            if (query.length === 0) {
+                sugerenciasBox.innerHTML = `<div class="sugerencias-header"><i class="fa-solid fa-fire me-1"></i> BÚSQUEDAS TENDENCIA</div>`;
+                coincidencias = tendencias;
+            } else {
+                coincidencias = listaJuegos.filter(juego => juego.toLowerCase().includes(query));
+                if (coincidencias.length > 0) {
+                    sugerenciasBox.innerHTML = `<div class="sugerencias-header">COINCIDENCIAS EN TIENDA</div>`;
+                }
+            }
+
+            if (coincidencias.length === 0) {
+                sugerenciasBox.innerHTML += `<div class="sugerencia-item text-secondary">No se encontró "${filtro}"</div>`;
+            } else {
+                coincidencias.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'sugerencia-item';
+                    div.innerHTML = `<i class="fa-solid fa-magnifying-glass text-secondary"></i> <span>${item}</span>`;
+                    div.addEventListener('click', () => {
+                        input.value = item;
+                        filtrarTarjetas(item);
+                        sugerenciasBox.style.display = 'none';
+                    });
+                    sugerenciasBox.appendChild(div);
+                });
+            }
+
+            sugerenciasBox.style.display = 'block';
+        }
+
+        function filtrarTarjetas(texto) {
+            const query = texto.toLowerCase().trim();
+            columnasJuego.forEach(col => {
+                const titulo = col.querySelector('.card-title');
+                if (titulo) {
+                    const textTitle = titulo.textContent.toLowerCase();
+                    if (textTitle.includes(query)) {
+                        col.classList.remove('d-none');
+                    } else {
+                        col.classList.add('d-none');
+                    }
+                }
+            });
+        }
+
+        input.addEventListener('focus', () => {
+            mostrarSugerencias(input.value);
+        });
+
+        input.addEventListener('input', (e) => {
+            const val = e.target.value;
+            mostrarSugerencias(val);
+            filtrarTarjetas(val);
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!document.querySelector('.buscador-contenedor').contains(e.target)) {
+                sugerenciasBox.style.display = 'none';
+            }
+        });
+    });
+</script>
 </body>
 </html>
