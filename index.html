@@ -190,6 +190,52 @@
     top: 50%;
     transform: translateY(-50%);
 }
+.buscador-contenedor{
+    position: relative;
+    top: 100%;
+}
+
+.sugerencias-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #321175;
+    border: 1px solid #495057;
+    border-radius:  0 0 8px 8px;
+    overflow: hidden;
+    z-index: 9999;
+    display: none;
+    margin-top: 4px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.sugerencias-header {
+    padding: 10px 15px;
+    color: #adb5bd;
+    font-size: 12px;
+    font-weight:  bold;
+    border-bottom: 1px solid #495057;
+}
+
+.sugerencia-item {
+    padding: 12px 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition:  backround-color 0.2s;
+}
+
+.sugerencia-item :hover {
+    background-color: #340353;
+}
+
+.sugerencia-item i {
+    width:  18px;
+    text-align: center;
+}
 
 .categorias {
     width: 100%;
@@ -582,18 +628,40 @@
 
     <header>
     <div class= "container-fluid px-2 d-flex align-items-center justify-content-between" style="height: 110px;">
-        <a href="index3.html" class="navbar-brand d-flex align-items-center p-0 m-0 flex-shrink-0" style="height: 85px;">
+        <a href="index.html" class="navbar-brand d-flex align-items-center p-0 m-0 flex-shrink-0" style="height: 85px;">
             <img src="img/LOGO NAV.png" alt="Vortex Game Vault" class=" h-auto w-auto" style="object-fit: contain;" style="width: 240px; height: auto; object-fit: contain;">
         </a>
 
-        <div class="flex-grow-1 mx-4" style="max-width: 600px;">
-            <div class="input-group align-items-center">
-                <input type="text" class="form-control bg-dark text-white border-secondary shadow-none py-3" placeholder="Busca juegos, recargas y más">
-                <button class="btn btn-outline-secondary text-light border-secondary px-3 py-3" type="button">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </button>
-            </div>
+        
+<div class="flex-grow-1 mx-4" style="max-width: 600px;">
+    <div class="buscador-contenedor position-relative">
+        
+        <div class="input-group align-items-center">
+            <input 
+                type="text" 
+                id="buscadorInput"
+                class="form-control bg-dark text-white border-secondary shadow-none py-3" 
+                placeholder="Busca juegos, recargas y más"
+                autocomplete="off"
+            >
+
+            <button 
+                class="btn btn-outline-secondary text-light border-secondary px-3 py-3" 
+                type="button"
+                id="botonBuscar"
+            >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
         </div>
+
+        <div id="sugerenciasBox" class="sugerencias-box"></div>
+
+    </div>
+</div>
+
 
         <div class="d-flex align-items-center gap-4 flex-shrink-0">
             <div class="dropdown">
@@ -1195,6 +1263,8 @@
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
                 <script src="/js/favoritos.js"></script>
                 <script src="js/carruselCategorias.js"></script>
+                <script src="js/buscador.js"></script>
+                
 
 </body>
 </html>
