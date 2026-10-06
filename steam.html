@@ -89,13 +89,13 @@
     opacity: 1;
 }
 
-
+/* Contenedor del buscador */
 .buscador-contenedor {
     position: relative;
     width: 100%;
 }
 
-
+/* Caja de sugerencias */
 .sugerencias-box {
     position: absolute;
     top: 100%;
@@ -111,7 +111,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-
+/* Header de las sugerencias */
 .sugerencias-header {
     padding: 10px 15px;
     color: #adb5bd;
@@ -120,7 +120,7 @@
     border-bottom: 1px solid #321175;
 }
 
-
+/* Cada ítem de sugerencia */
 .sugerencia-item {
     padding: 12px 15px;
     color: white;
@@ -461,11 +461,48 @@ section.container {
 .footer-legal-text a:hover {
     color: #ffffff;
 }
+.buscador-contenedor {
+    position: relative;
+    width: 100%;
+}
+
+.sugerencias-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 5px;
+    background-color: #321175;
+    border: 1px solid #321175;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 9999;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.sugerencias-header {
+    padding: 10px 15px;
+    color: #adb5bd;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 1px solid #321175;
+}
+
+.sugerencia-item {
+    padding: 12px 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.sugerencia-item:hover {
+    background-color: #7b0bc1;
+}
 </style>
-
-
 </head>
-
 <body>
 
 <header>
@@ -475,6 +512,7 @@ section.container {
     </a>
 
     <div class="flex-grow-1 mx-4" style="max-width: 600px;">
+
         <div class="flex-grow-1 mx-4" style="max-width: 600px;">
     <div class="buscador-contenedor">
         <div class="input-group align-items-center">
@@ -484,21 +522,14 @@ section.container {
                 class="form-control bg-dark text-white border-secondary shadow-none py-3" 
                 placeholder="Busca juegos, recargas y más"
                 autocomplete="off"
-            >
-            <button 
-                class="btn btn-outline-secondary text-light border-secondary px-3 py-3" 
-                type="button"
-                id="botonBuscar"
-            >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
             </button>
         </div>
+
         <div id="sugerenciasBox" class="sugerencias-box"></div>
     </div>
 </div>
+
     </div>
 
     <div class="d-flex align-items-center gap-4 flex-shrink-0">
@@ -523,14 +554,11 @@ section.container {
                     </a>
                 </li>
 
-
             </ul>
 
         </div>
 
         <div class="d-flex align-items-center gap-3">
-
-            <div class="d-flex align-items-center gap-3">
                 <a href="favoritos.html" class="text-light fs-4 text-decoration-none " title="Favoritos">
                     <i class="bi bi-heart"></i>
                 </a>
@@ -538,7 +566,6 @@ section.container {
                     <i class="bi bi-cart"></i>
                 </a>
             </div>
-        </div>
 
     </div>
 
@@ -643,6 +670,7 @@ section.container {
                 <span>eCards de<br>Juegos</span>
             </a>
 
+            
             <a href="ventiladores.html" class="categoria">
                 <i class="bi bi-fan"></i>
                 <span>Ventiladores</span>
@@ -702,35 +730,17 @@ section.container {
         <section class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-4">
 
-        
-
                 <div class="col">
                     <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
+                        <span class="badge bg-danger position-absolute m-2">-50%</span>
                         <a href="favoritos.html" class="favorito-btn">
                             <i class="bi bi-heart"></i>
                         </a>
-                        <img src="img/fc 25 PS5.jpg" class="card-img-top img-game" alt="FC 25">
+                        <img src="img/Baldur's Gate 3.82a9ea41-c628-4d02-8a0f-d0304eba31c7" class="card-img-top img-game" alt="FC 25">
                         <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">EA Sports FC 25</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$310.000</p>
-                            <p class="text-info fw-bold fs-4">$31.000</p>
-                            <a href="compras2.html?nombre=The%20Last%20Of%20Us&precio=$31.000&img=img/fc%20last%20of%20us%20PS5.webp" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
-                        <a href="favoritos.html" class="favorito-btn">
-                            <i class="bi bi-heart"></i>
-                        </a>
-                        <img src="img/DBZSP PS5.jpg" class="card-img-top img-game" alt="FC 25">
-                        <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Dragon Ball: Sparking! Zero</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$150.000</p>
-                            <p class="text-info fw-bold fs-4">$15.000</p>
+                            <h5 class="card-title">Baldur's Gate 3 (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$220.000</p>
+                            <p class="text-info fw-bold fs-4">$110.000</p>
                             <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
                         </div>
                     </div>
@@ -738,15 +748,15 @@ section.container {
 
                 <div class="col">
                     <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
+                        <span class="badge bg-danger position-absolute m-2">-40%</span>
                         <a href="favoritos.html" class="favorito-btn">
                             <i class="bi bi-heart"></i>
                         </a>
-                        <img src="img/God_of_War_Ragnarok PS5.webp" class="card-img-top img-game" alt="FC 25">
+                        <img src="img/Black Myth Wukong.jpg" class="card-img-top img-game" alt="FC 25">
                         <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">God of War Ragnarok</h5>
+                            <h5 class="card-title">Black Myth: Wukong (Steam)</h5>
                             <p class="text-decoration-line-through text-secondary m-0">$250.000</p>
-                            <p class="text-info fw-bold fs-4">$25.000</p>
+                            <p class="text-info fw-bold fs-4">$150.000</p>
                             <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
                         </div>
                     </div>
@@ -754,79 +764,15 @@ section.container {
 
                 <div class="col">
                     <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
+                        <span class="badge bg-danger position-absolute m-2">-35%</span>
                         <a href="favoritos.html" class="favorito-btn">
                             <i class="bi bi-heart"></i>
                         </a>
-                        <img src="img/ELDEN PS5.jpg" class="card-img-top img-game" alt="FC 25">
+                        <img src="img/Elden Ring Shadow of the Erdtree.jpg" class="card-img-top img-game" alt="FC 25">
                         <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Elden Ring</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$220.000</p>
-                            <p class="text-info fw-bold fs-4">$22.000</p>
-                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
-                        <a href="favoritos.html" class="favorito-btn">
-                            <i class="bi bi-heart"></i>
-                        </a>
-                        <img src="img/Minecraft PS5.webp" class="card-img-top img-game" alt="FC 25">
-                        <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Minecraft</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$90.000</p>
-                            <p class="text-info fw-bold fs-4">$9.000</p>
-                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
-                        <a href="favoritos.html" class="favorito-btn">
-                            <i class="bi bi-heart"></i>
-                        </a>
-                        <img src="img/GTA V PS5.jpg" class="card-img-top img-game" alt="FC 25">
-                        <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">GTA V</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$120.000</p>
-                            <p class="text-info fw-bold fs-4">$12.000</p>
-                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
-                        <a href="favoritos.html" class="favorito-btn">
-                            <i class="bi bi-heart"></i>
-                        </a>
-                        <img src="img/spiderman2 PS5.webp" class="card-img-top img-game" alt="FC 25">
-                        <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Spider-Man 2</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$280.000</p>
-                            <p class="text-info fw-bold fs-4">$28.000</p>
-                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
-                        <a href="favoritos.html" class="favorito-btn">
-                            <i class="bi bi-heart"></i>
-                        </a>
-                        <img src="img/resident evil 8 PS5.jpg" class="card-img-top img-game" alt="FC 25">
-                        <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Resident Evil Village</h5>
+                            <h5 class="card-title">Elden Ring: Shadow of the Erdtree (Steam)</h5>
                             <p class="text-decoration-line-through text-secondary m-0">$180.000</p>
-                            <p class="text-info fw-bold fs-4">$18.000</p>
+                            <p class="text-info fw-bold fs-4">$117.000</p>
                             <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
                         </div>
                     </div>
@@ -834,15 +780,15 @@ section.container {
 
                 <div class="col">
                     <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
+                        <span class="badge bg-danger position-absolute m-2">-60%</span>
                         <a href="favoritos.html" class="favorito-btn">
                             <i class="bi bi-heart"></i>
                         </a>
-                        <img src="img/The last of us PS5.webp" class="card-img-top img-game" alt="FC 25">
+                        <img src="img/Hades II.jpg" class="card-img-top img-game" alt="FC 25">
                         <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">The Last Of Us</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$190.000</p>
-                            <p class="text-info fw-bold fs-4">$19.000</p>
+                            <h5 class="card-title">Hades II (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$140.000</p>
+                            <p class="text-info fw-bold fs-4">$56.000</p>
                             <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
                         </div>
                     </div>
@@ -850,79 +796,15 @@ section.container {
 
                 <div class="col">
                     <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
+                        <span class="badge bg-danger position-absolute m-2">-25%</span>
                         <a href="favoritos.html" class="favorito-btn">
                             <i class="bi bi-heart"></i>
                         </a>
-                        <img src="img/resident evil 4 PS5.webp" class="card-img-top img-game" alt="FC 25">
+                        <img src="img/Stellar Blade.jpg" class="card-img-top img-game" alt="FC 25">
                         <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Resident Evil 4</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$190.000</p>
-                            <p class="text-info fw-bold fs-4">$19.000</p>
-                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
-                        <a href="favoritos.html" class="favorito-btn">
-                            <i class="bi bi-heart"></i>
-                        </a>
-                        <img src="img/Call of duty bo6 PS5.webp" class="card-img-top img-game" alt="FC 25">
-                        <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Call of Duty: Black Ops 6</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$290.000</p>
-                            <p class="text-info fw-bold fs-4">$29.000</p>
-                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
-                        <a href="favoritos.html" class="favorito-btn">
-                            <i class="bi bi-heart"></i>
-                        </a>
-                        <img src="img/Halo PS5.jpg" class="card-img-top img-game" alt="FC 25">
-                        <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Halo Infinite</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$280.000</p>
-                            <p class="text-info fw-bold fs-4">$28.000</p>
-                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
-                        <a href="favoritos.html" class="favorito-btn">
-                            <i class="bi bi-heart"></i>
-                        </a>
-                        <img src="img/gears 4 XBOX.jpg" class="card-img-top img-game" alt="FC 25">
-                        <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Gears of War 4</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$220.000</p>
-                            <p class="text-info fw-bold fs-4">$22.000</p>
-                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
-                        <a href="favoritos.html" class="favorito-btn">
-                            <i class="bi bi-heart"></i>
-                        </a>
-                        <img src="img/doom XBOX.jpg" class="card-img-top img-game" alt="FC 25">
-                        <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Doom</h5>
+                            <h5 class="card-title">Stellar Blade (Steam)</h5>
                             <p class="text-decoration-line-through text-secondary m-0">$260.000</p>
-                            <p class="text-info fw-bold fs-4">$26.000</p>
+                            <p class="text-info fw-bold fs-4">$195.000</p>
                             <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
                         </div>
                     </div>
@@ -930,15 +812,15 @@ section.container {
 
                 <div class="col">
                     <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
+                        <span class="badge bg-danger position-absolute m-2">-15%</span>
                         <a href="favoritos.html" class="favorito-btn">
                             <i class="bi bi-heart"></i>
                         </a>
-                        <img src="img/cyberpunk PS5.webp" class="card-img-top img-game" alt="FC 25">
+                        <img src="img/Silent Hill 2.jpg" class="card-img-top img-game" alt="FC 25">
                         <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Cyberpunk 2077</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$160.000</p>
-                            <p class="text-info fw-bold fs-4">$16.000</p>
+                            <h5 class="card-title">Silent Hill 2 (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$41.999</p>
+                            <p class="text-info fw-bold fs-4">$35.699</p>
                             <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
                         </div>
                     </div>
@@ -946,15 +828,47 @@ section.container {
 
                 <div class="col">
                     <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
+                        <span class="badge bg-danger position-absolute m-2">-30%</span>
                         <a href="favoritos.html" class="favorito-btn">
                             <i class="bi bi-heart"></i>
                         </a>
-                        <img src="img/MK 1 PS5.jpg" class="card-img-top img-game" alt="FC 25">
+                        <img src="img/Metaphor ReFantazio.png" class="card-img-top img-game" alt="FC 25">
                         <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Mortal Kombat 1</h5>
+                            <h5 class="card-title">Metaphor: ReFantazio (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$210.000</p>
+                            <p class="text-info fw-bold fs-4">$147.000</p>
+                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 game-card text-white">
+                        <span class="badge bg-danger position-absolute m-2">-55%</span>
+                        <a href="favoritos.html" class="favorito-btn">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                        <img src="img/Palworld.webp" class="card-img-top img-game" alt="FC 25">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Palworld (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$120.000</p>
+                            <p class="text-info fw-bold fs-4">$54.000</p>
+                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 game-card text-white">
+                        <span class="badge bg-danger position-absolute m-2">-20%</span>
+                        <a href="favoritos.html" class="favorito-btn">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                        <img src="img/Dragon's Dogma 2.png" class="card-img-top img-game" alt="FC 25">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Dragon's Dogma 2 (Steam)</h5>
                             <p class="text-decoration-line-through text-secondary m-0">$240.000</p>
-                            <p class="text-info fw-bold fs-4">$24.000</p>
+                            <p class="text-info fw-bold fs-4">$192.000</p>
                             <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
                         </div>
                     </div>
@@ -962,14 +876,94 @@ section.container {
 
                 <div class="col">
                     <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
+                        <span class="badge bg-danger position-absolute m-2">-50%</span>
                         <a href="favoritos.html" class="favorito-btn">
                             <i class="bi bi-heart"></i>
                         </a>
-                        <img src="img/FORZA PS5.jpg" class="card-img-top img-game" alt="FC 25">
+                        <img src="img/Helldivers 2.jpg" class="card-img-top img-game" alt="FC 25">
                         <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Forza Horizon 5</h5>
+                            <h5 class="card-title">Helldivers 2 (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$160.000</p>
+                            <p class="text-info fw-bold fs-4">$80.000</p>
+                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 game-card text-white">
+                        <span class="badge bg-danger position-absolute m-2">-15%</span>
+                        <a href="favoritos.html" class="favorito-btn">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                        <img src="img/Final Fantasy VII Rebirth.jpg" class="card-img-top img-game" alt="FC 25">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Final Fantasy VII Rebirth (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$280.000</p>
+                            <p class="text-info fw-bold fs-4">$238.000</p>
+                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 game-card text-white">
+                        <span class="badge bg-danger position-absolute m-2">-35%</span>
+                        <a href="favoritos.html" class="favorito-btn">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                        <img src="img/Like a Dragon Infinite Wealth.jpg" class="card-img-top img-game" alt="FC 25">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Like a Dragon: Infinite Wealth (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$190.000</p>
+                            <p class="text-info fw-bold fs-4">$114.000</p>
+                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 game-card text-white">
+                        <span class="badge bg-danger position-absolute m-2">-25%</span>
+                        <a href="favoritos.html" class="favorito-btn">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                        <img src="img/Tekken 8.png" class="card-img-top img-game" alt="FC 25">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Tekken 8 (Steam)</h5>
                             <p class="text-decoration-line-through text-secondary m-0">$200.000</p>
+                            <p class="text-info fw-bold fs-4">$130.000</p>
+                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 game-card text-white">
+                        <span class="badge bg-danger position-absolute m-2">-25%</span>
+                        <a href="favoritos.html" class="favorito-btn">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                        <img src="img/Star Wars Outlaws.png" class="card-img-top img-game" alt="FC 25">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Star Wars Outlaws (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$250.000</p>
+                            <p class="text-info fw-bold fs-4">$187.500</p>
+                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 game-card text-white">
+                        <span class="badge bg-danger position-absolute m-2">-60%</span>
+                        <a href="favoritos.html" class="favorito-btn">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                        <img src="img/Lethal Company.jpg" class="card-img-top img-game" alt="FC 25">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Lethal Company (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$50.000</p>
                             <p class="text-info fw-bold fs-4">$20.000</p>
                             <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
                         </div>
@@ -978,15 +972,15 @@ section.container {
 
                 <div class="col">
                     <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
+                        <span class="badge bg-danger position-absolute m-2">-30%</span>
                         <a href="favoritos.html" class="favorito-btn">
                             <i class="bi bi-heart"></i>
                         </a>
-                        <img src="img/STREET PS5.jpg" class="card-img-top img-game" alt="FC 25">
+                        <img src="img/Monster Hunter Wilds.avif" class="card-img-top img-game" alt="FC 25">
                         <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Street Fighter 6</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$210.000</p>
-                            <p class="text-info fw-bold fs-4">$21.000</p>
+                            <h5 class="card-title">Monster Hunter Wilds (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$230.000</p>
+                            <p class="text-info fw-bold fs-4">$161.000</p>
                             <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
                         </div>
                     </div>
@@ -994,15 +988,15 @@ section.container {
 
                 <div class="col">
                     <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
+                        <span class="badge bg-danger position-absolute m-2">-20%</span>
                         <a href="favoritos.html" class="favorito-btn">
                             <i class="bi bi-heart"></i>
                         </a>
-                        <img src="img/Batman PS5.jpg" class="card-img-top img-game" alt="FC 25">
+                        <img src="img/Astro Bot.jpg" class="card-img-top img-game" alt="FC 25">
                         <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">Batman</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$90.000</p>
-                            <p class="text-info fw-bold fs-4">$9.000</p>
+                            <h5 class="card-title">Astro Bot (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$170.000</p>
+                            <p class="text-info fw-bold fs-4">$136.000</p>
                             <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
                         </div>
                     </div>
@@ -1010,21 +1004,52 @@ section.container {
 
                 <div class="col">
                     <div class="card h-100 game-card text-white">
-                        <span class="badge bg-danger position-absolute m-2">-90%</span>
+                        <span class="badge bg-danger position-absolute m-2">-50%</span>
                         <a href="favoritos.html" class="favorito-btn">
                             <i class="bi bi-heart"></i>
                         </a>
-                        <img src="img/GOW3 PS5.jpg" class="card-img-top img-game" alt="FC 25">
+                        <img src="img/Satisfactory.jpg" class="card-img-top img-game" alt="FC 25">
                         <div class="card-body text-center d-flex flex-column">
-                            <h5 class="card-title">God of War 3</h5>
-                            <p class="text-decoration-line-through text-secondary m-0">$150.000</p>
-                            <p class="text-info fw-bold fs-4">$15.000</p>
+                            <h5 class="card-title">Satisfactory (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$140.000</p>
+                            <p class="text-info fw-bold fs-4">$70.000</p>
                             <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
                         </div>
                     </div>
                 </div>
 
+                <div class="col">
+                    <div class="card h-100 game-card text-white">
+                        <span class="badge bg-danger position-absolute m-2">-10%</span>
+                        <a href="favoritos.html" class="favorito-btn">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                        <img src="img/Counter-Strike 2.jpg" class="card-img-top img-game" alt="FC 25">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Counter-Strike 2 (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$0</p>
+                            <p class="text-info fw-bold fs-4">$0</p>
+                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="col">
+                    <div class="card h-100 game-card text-white">
+                        <span class="badge bg-danger position-absolute m-2">-55%</span>
+                        <a href="favoritos.html" class="favorito-btn">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                        <img src="img/Warhammer 40,000 Space Marine 2.jpg" class="card-img-top img-game" alt="FC 25">
+                        <div class="card-body text-center d-flex flex-column">
+                            <h5 class="card-title">Warhammer 40,000: Space Marine 2 (Steam)</h5>
+                            <p class="text-decoration-line-through text-secondary m-0">$180.000</p>
+                            <p class="text-info fw-bold fs-4">$99.000</p>
+                            <a href="compras2.html" class="btn btn-primary mt-auto fw-bold">Comprar Ahora</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>
